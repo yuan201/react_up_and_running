@@ -1,0 +1,30 @@
+var Component = React.createClass({
+    propTypes: {
+        firstName: React.PropTypes.string.isRequired,
+        middleName: React.PropTypes.string,
+        familyName: React.PropTypes.string.isRequired,
+        address: React.PropTypes.string,
+    },
+    
+    getDefaultProps: function() {
+        return {
+            middleName: '',
+            address: 'n/a',
+        };
+    },
+    
+    render: function() {
+        return React.DOM.span(null, "My name is " + this.props.firstName + ' ' +
+			      this.props.middleName + ' ' + this.props.familyName);
+    }
+});
+
+var ComponentFactory = React.createFactory(Component);
+
+ReactDOM.render(
+    ComponentFactory({
+        firstName: 'John',
+        familyName: 'Lenon'
+    }),
+    document.getElementById("app")
+);
