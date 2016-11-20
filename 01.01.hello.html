@@ -8,24 +8,9 @@
     <div id="app">
       <!-- my app renders here -->
     </div>
-    <script src="build/react.js"></script>
+    <script src="build/react-with-addons.js"></script>
     <script src="build/react-dom.js"></script>
-    <script>
-      var Component = React.createClass({
-        render: function() {
-          return React.DOM.span(null, "I'm so custom");
-        }
-      });
-
-      var ComponentFactory = React.createFactory(Component);
-
-      ReactDOM.render(
-        ComponentFactory({
-          name: "Bob",
-        }),
-        document.getElementById("app")
-      );
-    </script>
+    <script src="js/myreact.js"></script>
   </body>
 </html>
 
